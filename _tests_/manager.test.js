@@ -1,10 +1,10 @@
 //Child class required
-const manager = require('../lib/manager');
+const Manager = require('../lib/Manager');
 
 describe("Manager", () => {
     describe("Initialisation", () => {
         it("Should create an object with a name, id, email and officeNumber", () => {
-            const Manager = new manager("Amba", 1, "Amba.S@gmail.com", 8);
+            const manager = new Manager("Amba", 1, "Amba.S@gmail.com", 8);
 
             //confirm the new objects has the correct properties
             expect(manager.name).toEqual("Amba");
@@ -18,8 +18,8 @@ describe("Manager", () => {
          describe("Can set the officeNumber using constructor arguments", () => {
             it("Should return the managers officeNumber", () => {
                 const officeNumberValue = 8
-                const Manager = new manager("Amba", 1, "Amba.S@gmail.com", officeNumberValue);
-                expect(Manager.officeNumber).toBe(officeNumberValue)
+                const manager = new Manager("Amba", 1, "Amba.S@gmail.com", officeNumberValue);
+                expect(manager.officeNumber).toBe(officeNumberValue)
             })
         })
 
@@ -27,8 +27,8 @@ describe("Manager", () => {
         describe("Can get office number from getOfficeNumber", () => {
             it("Should return the manager office number", () => {
                 const testValue = 1;
-                const Manager = new manager("Name", 1, "Amba.S@gmail.com", testValue);
-                expect(Manager.getOfficeNumber()).toBe(testValue)
+                const manager = new Manager("Name", 1, "Amba.S@gmail.com", testValue);
+                expect(manager.getOfficeNumber()).toBe(testValue)
             })
         })
 
@@ -36,8 +36,8 @@ describe("Manager", () => {
         describe("Can get role from getRole", () => {
             it("Should return the role as 'manager' ", () => {
                 const testRole = "Manager";
-                const Manager = new manager("Amba", 1, "Amba.S@gmail.com", 8);
-                expect(Manager.getRole()).toBe(testRole);
+                const manager = new Manager("Amba", 1, "Amba.S@gmail.com", 8);
+                expect(manager.getRole()).toBe(testRole);
             })
         })
     })
